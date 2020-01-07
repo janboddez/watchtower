@@ -6,6 +6,8 @@ if [ ! -e /var/www/html/lib/config.php ]; then
 
     git clone https://github.com/aaronpk/Watchtower.git .
 
+    composer install
+
     cp lib/config.template.php lib/config.php
 
     chown -R www-data:www-data .
