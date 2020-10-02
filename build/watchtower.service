@@ -4,8 +4,9 @@ Wants=docker.service
 
 [Service]
 ExecStartPre=/bin/sleep 15
-ExecStart=/usr/bin/docker exec watchtower_watchtower_1 /usr/local/bin/php /var/www/html/scripts/watchtower.php
+ExecStart=/usr/bin/docker exec watchtower_watchtower_1 php scripts/watchtower.php
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
+

@@ -1,0 +1,13 @@
+[Unit]
+Description=Watchtower Worker (User)
+Wants=docker.service
+
+[Service]
+ExecStartPre=/bin/sleep 15
+Environment=DOCKER_HOST=unix:///run/user/<your-uid>/docker.sock
+ExecStart=/home/aperture/bin/docker exec watchtower_watchtower_1 php scripts/watchtower.php
+Restart=always
+
+[Install]
+WantedBy=default.target
+
